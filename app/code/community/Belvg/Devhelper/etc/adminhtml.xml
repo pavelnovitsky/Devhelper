@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * BelVG LLC.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://store.belvg.com/BelVG-LICENSE-COMMUNITY.txt
+ *
+  /***************************************
+ *         MAGENTO EDITION USAGE NOTICE *
+ * *************************************** */
+/* This package designed for Magento COMMUNITY edition
+ * BelVG does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * BelVG does not provide extension support in case of
+ * incorrect edition usage.
+  /***************************************
+ *         DISCLAIMER   *
+ * *************************************** */
+/* Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future.
+ * ****************************************************
+ * @category   Belvg
+ * @package    Belvg_Devhelper
+ * @author Pavel Novitsky <pavel@belvg.com>
+ * @copyright  Copyright (c) 2010 - 2012 BelVG LLC. (http://www.belvg.com)
+ * @license    http://store.belvg.com/BelVG-LICENSE-COMMUNITY.txt
+ */
+-->
+<config>
+    <menu>
+        <system>
+            <children>
+                <devhelper translate="title" module="devhelper">
+                    <title>Dev. Helper</title>
+                    <sort_order>91</sort_order>
+                    <children>
+                        <rewrires translate="title" module="devhelper">
+                            <title>Rewrites</title>
+                            <sort_order>0</sort_order>
+                            <children>
+                                <blocks translate="title" module="devhelper">
+                                    <title>Blocks rewrite</title>
+                                    <sort_order>0</sort_order>
+                                    <action>devhelper/adminhtml_devhelper/devhelper/filter/blocks</action>
+                                </blocks>
+                                <models translate="title" module="devhelper">
+                                    <title>Models rewrite</title>
+                                    <sort_order>2</sort_order>
+                                    <action>devhelper/adminhtml_devhelper/devhelper/filter/models</action>
+                                </models>
+                                <helpers translate="title" module="devhelper">
+                                    <title>Helpers rewrite</title>
+                                    <sort_order>3</sort_order>
+                                    <action>devhelper/adminhtml_devhelper/devhelper/filter/helpers</action>
+                                </helpers>
+                                <routers translate="title" module="devhelper">
+                                    <title>Routers rewrite</title>
+                                    <sort_order>4</sort_order>
+                                    <children>
+                                        <deprecated translate="title" module="devhelper">
+                                            <title>Deprecated From/To</title>
+                                            <sort_order>0</sort_order>
+                                            <action>devhelper/adminhtml_devhelper/routersdeprecated</action>
+                                        </deprecated>
+                                        <admin translate="title" module="devhelper">
+                                            <title>Admin</title>
+                                            <sort_order>1</sort_order>
+                                            <action>devhelper/adminhtml_devhelper/routers/filter/routers_admin</action>
+                                        </admin>
+                                        <frontend translate="title" module="devhelper">
+                                            <title>Frontend</title>
+                                            <sort_order>2</sort_order>
+                                            <action>devhelper/adminhtml_devhelper/routers/filter/routers_frontend</action>
+                                        </frontend>
+                                    </children>
+                                </routers>
+                            </children>
+                        </rewrires>
+                        <events translate="title" module="devhelper">
+                            <title>Events</title>
+                            <sort_order>2</sort_order>
+                            <action>devhelper/adminhtml_devhelper/events</action>
+                        </events>
+                    </children>
+                </devhelper>
+            </children>
+        </system>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <devhelper translate="title" module="devhelper">
+                                <title>Dev. Helper</title>
+                                <sort_order>91</sort_order>
+                                <children>
+                                    <rewrires module="devhelper" translate="title">
+                                        <title>Rewrites</title>
+                                        <sort_order>1</sort_order>
+                                        <children>
+                                            <blocks module="devhelper" translate="title">
+                                                <title>Blocks rewrite</title>
+                                                <sort_order>1</sort_order>
+                                            </blocks>
+                                            <models module="devhelper" translate="title">
+                                                <title>Models rewrite</title>
+                                                <sort_order>2</sort_order>
+                                            </models>
+                                            <helpers module="devhelper" translate="title">
+                                                <title>Helpers rewrite</title>
+                                                <sort_order>3</sort_order>
+                                            </helpers>
+                                            <routers module="devhelper" translate="title">
+                                                <title>Routers rewrite</title>
+                                                <sort_order>4</sort_order>
+                                                <children>
+                                                    <deprecated module="devhelper" translate="title">
+                                                        <title>Deprecated From/To</title>
+                                                        <sort_order>0</sort_order>
+                                                    </deprecated>
+                                                    <admin module="devhelper" translate="title">
+                                                        <title>Admin</title>
+                                                        <sort_order>1</sort_order>
+                                                    </admin>
+                                                    <frontend module="devhelper" translate="title">
+                                                        <title>Frontend</title>
+                                                        <sort_order>2</sort_order>
+                                                    </frontend>
+                                                </children>
+                                            </routers>
+                                        </children>
+                                    </rewrires>
+                                    <events module="devhelper" translate="title">
+                                        <title>Events</title>
+                                        <sort_order>2</sort_order>
+                                    </events>
+                                </children>
+                            </devhelper>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
